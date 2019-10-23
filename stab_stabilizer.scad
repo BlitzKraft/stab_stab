@@ -38,8 +38,9 @@ difference() {
 	cube([width+plate_lip, 13, 5+z_offset], center=true);
 	union() {
 		plate_pcb();
+		stab_offset = width < 8 ? 0 : 3; // Remove offset for smaller stab-stab
 		// costar
-		translate([-width/2 + 3, -13.5/2, 2.5])
+		translate([-width/2 + stab_offset, -13.5/2, 2.5])
 		color("black")
 		cube([3, 13.5, 8]);
 	}
