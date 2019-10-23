@@ -29,7 +29,7 @@ cube([3, 13.5, 8]);
 //plate_pcb();
 
 //begin stab-stab
-rotate([90, 0, 0])
+rotate([90, 0, 0]) // Rotate just to orient properly for 3D printing
 difference() {
 	plate_lip = 1;
 	z_offset = 0.5;
@@ -39,7 +39,7 @@ difference() {
 	union() {
 		plate_pcb();
 		// costar
-		translate([-width/2, -13.5/2, 2.5])
+		translate([-width/2 + 3, -13.5/2, 2.5])
 		color("black")
 		cube([3, 13.5, 8]);
 	}
